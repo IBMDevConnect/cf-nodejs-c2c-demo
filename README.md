@@ -42,12 +42,12 @@ This repository includes both microservices/Node.js applications, "guestbook-mai
 - Log into your Cloud Foundry organization and space: [CF Org and Space Configuration Tutorial](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#step3-configure-idt-env)
 - Install the latest version of Git: [Git Download Page](https://git-scm.com/downloads)
 
-## Step 2) Download the git repository 
+### Step 2) Download the git repository 
 
 It is responsible for the core functionality of the Guestbook (e.g. listing all entries, adding a new entry) and also communicates directly with the Cloudant database to save and retrieve the data.
 Two ways to download it , wither local setup or Using the IBM Cloud Shell.
 
-### Local Setup
+**Local Setup**
 
   1. First, open a terminal in a directory of your choice on your local computer.
   
@@ -57,7 +57,7 @@ Two ways to download it , wither local setup or Using the IBM Cloud Shell.
 
 OR 
 
-### Using IBM Cloud Shell
+**Using IBM Cloud Shell**
 
   1. In the IBM Cloud console, click the IBM Cloud Shell icon IBM Cloud Shell icon. A session starts and automatically logs you in 
   through the IBM Cloud CLI.
@@ -67,7 +67,7 @@ OR
   
   3. Following, use the command `cd cf-nodejs-c2c-demo` to navigate into the project directory.
 
-## Step 3) Setup Org and space
+### Step 3) Setup Org and space
 
 1. Go to Manage->Account->Cloud Foundry org. This will give you the name of the org(mostly your email id , and space).
 
