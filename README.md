@@ -34,7 +34,7 @@ This repository includes both microservices/Node.js applications, "guestbook-mai
 
 ## Deployment
 
-### Prerequisites
+### Step 1 ) Prerequisites
 
 - Install the latest version of the IBM Cloud CLI: [IBM Cloud CLI Tutorial](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started)
 - If not present, create Account on IBM Cloud: [IBM Cloud Registration](https://ibm.biz/BdqaJE)
@@ -42,7 +42,9 @@ This repository includes both microservices/Node.js applications, "guestbook-mai
 - Log into your Cloud Foundry organization and space: [CF Org and Space Configuration Tutorial](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#step3-configure-idt-env)
 - Install the latest version of Git: [Git Download Page](https://git-scm.com/downloads)
 
-Step 1) Download the git repository - It is responsible for the core functionality of the Guestbook (e.g. listing all entries, adding a new entry) and also communicates directly with the Cloudant database to save and retrieve the data.
+## Step 2) Download the git repository 
+
+It is responsible for the core functionality of the Guestbook (e.g. listing all entries, adding a new entry) and also communicates directly with the Cloudant database to save and retrieve the data.
 Two ways to download it , wither local setup or Using the IBM Cloud Shell.
 
 ### Local Setup
@@ -62,7 +64,7 @@ OR
   2. Clone this Git repository by using the command: `git clone https://github.com/IBMDevConnect/cf-nodejs-c2c-demo.git`.
   3. Following, use the command `cd cf-nodejs-c2c-demo` to navigate into the project directory.
 
-## setup Org and space
+## Step 3) Setup Org and space
 
 1. Go to Manage->Account->Cloud Foundry org. This will give you the name of the org(mostly your email id , and space).
 2. Target region using command ```ibmcloud target -r <region>```. eg `ibmcloud target -r eu-gb`
@@ -70,11 +72,14 @@ OR
   
   Note: In case you are using Cloud Shell, Command may fail initially. 
 
-### Guestbook-Main
+### Step 4 ) Guestbook-Main
 
 1. Go to the IBM Cloud "Catalog" by clicking on the same-named navigation item on the IBM CLoud Dashboard or by opening the following link: [https://cloud.ibm.com/catalog](https://cloud.ibm.com/catalog)
+
 2. Search for the product "Cloudant" in the search bar or go to the "Databases" section directly.
+
 3. Click on the product card "Cloudant" to provision a new Cloudant NoSQL database.
+
 4. Fill out the form for the database creation:
 
 - **Region/Location** - To reduce latency, use the same region/location as of your CF space.
@@ -88,6 +93,7 @@ OR
 - You're redirected to the resource list. The provisioning might take up to 5 minutes. In the meantime, we are going to deploy the `guestbook-main` application.
 
 6. Open your local terminal and navigate into the `directory "guestbook-main"` by using the command: `cd <Path to directory>`
+
 7. Push the application to IBM Cloud using the CLI (installation see Prerequisites):
 
 ---
@@ -122,15 +128,25 @@ start command:   ./vendor/initial_startup.rb
 - You can copy the `<ROUTE>` value from the output now and open it in the browser to see the deployed Guestbook. Please notice that the application has no functionality yet because neither the database nor the seond service are connected.
 
 8. Go back to the IBM Cloud Resource Overview ([https://cloud.ibm.com/resources](https://cloud.ibm.com/resources))
+
 9. Make sure the status of "guestbook-database" in the "Services" section is `Provisioned`. You might have to reload the page.
+
 10. Click on the "guestbook-database" name to go to the service dashboard.
+
 11. In the sidebar of the service dashboard, click on the item "Connections".
+
 12. Subsequently, on the connections page, click the button "Create connection" to create a new connection configuration between the application and the service.
+
 13. After selecting the region/location of the previously created application (regeion you logged in with, displayed on `ibmcloud target`) in the filter of the table, you will see the application "guestbook-main" as an entry in the table.
+
 14. Hover over the "guestbook-main" row to find the "Create" button and click on it.
+
 15. In the form for creating the connection, you can stay with the default values. The "Access Role" should be `Manager`. Following, click on the "Connect & restage app" button.
+
 16. You might have to confirm the restaging of the "guestbook-main" application in another popup.
+
 17. In the table, under "Connected Applications", you will find "guestbook-main" as an entry.
+
 18. Click on the "guestbook-main" row to go to the application dashboard.
 
 - After the application is restaged/restarted, you can visit the App URL/Route again and create your first Guestbook entry. The tags are added after connecting the second application.
