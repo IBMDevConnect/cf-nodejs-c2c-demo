@@ -50,7 +50,9 @@ Two ways to download it , wither local setup or Using the IBM Cloud Shell.
 ### Local Setup
 
   1. First, open a terminal in a directory of your choice on your local computer.
+  
   2. Clone this Git repository by using the command: `git clone https://github.com/IBMDevConnect/cf-nodejs-c2c-demo.git`.
+  
   3. Following, use the command `cd cf-nodejs-c2c-demo` to navigate into the project directory.
 
 OR 
@@ -62,12 +64,16 @@ OR
   ![Shell](.docs/cloudshell.png)
 
   2. Clone this Git repository by using the command: `git clone https://github.com/IBMDevConnect/cf-nodejs-c2c-demo.git`.
+  
   3. Following, use the command `cd cf-nodejs-c2c-demo` to navigate into the project directory.
 
 ## Step 3) Setup Org and space
 
 1. Go to Manage->Account->Cloud Foundry org. This will give you the name of the org(mostly your email id , and space).
+
 2. Target region using command ```ibmcloud target -r <region>```. eg `ibmcloud target -r eu-gb`
+Learn how locations are organized in IBM cloud here https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones 
+
 3. Target org and space using ```ibmcloud target -o <org name> -s <space name>```. eg `ibmcloud target -o abc@abc.com -s dev`
   
   Note: In case you are using Cloud Shell, Command may fail initially. 
